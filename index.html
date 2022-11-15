@@ -5,40 +5,50 @@
 		<meta charset="UTF-8">
 		<script type="text/javascript">
 			function afficheVille(){
-				let villeChoisie = "Niort";
-				console.log(villeChoisie);
+				let nomVilleChoisie = document.getElementById("choixVille").value;
+				let villes = document.getElementByClassName("Ville");
+				for(i=(); i<villes.length; i++) {
+					if(villes[i].id == nomVilleChoisie){
+						villes[i].style.display="";
+					} else {
+						villes[i].style.display="none";
+					}
+				}
 				
 			}
 		</script>
 	</head>
-	<body onload = " afficheVille()">
+	<body>
 		
 		<div class="header">
 		<p> TD n°4 Technologies application météo </p>
 		</div>
-		<select name="listeVille"> 
-		<option value="Niort">Niort</option>
-		<option value="Rio">Rio de Janeiro</option>
-		<option value="Bretagne">Bretagne</option>
-		</select>
+		<p>
+			<select id="choixVille" name="listeVille" onchange = " afficheVille()"> 
+				<option value="Niort">Niort</option>
+				<option value="Rio">Rio de Janeiro</option>
+				<option value="Bretagne">Bretagne</option>
+			</select>
+		</p>
 		<div class="all">
 		
-
+		<div id="Niort" class="ville">
 			<h2>Niort</h2>
 			<p>12°, pluvieux</p>
 			<img src="pluvieux.png" width="5%"/>
-
+		</div>
 		
-
+		<div id="Rio" class="ville">
 			<h2>Rio</h2>
 			<p>28°, orageux</p>
 			<img src="orageux.png" width="5%"/>
-
+		</div>
 		
+		<div id="Bretagne" class="ville">
 			<h2>Bretagne</h2>
 			<p>19°, ensolleillé</p>
 			<img src="ensoleille.png" width="5%"/>
-
+		</div>
 		
 		</div>
 		
